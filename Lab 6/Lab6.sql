@@ -48,3 +48,12 @@ From (Select o.*, o.qty*p.priceusd*(1-(discount/100)) as truedollars
       inner join products p on o.pid = p.pid
       inner join customers c on o.cid = c.cid) as tmptable
 Where dollars != truedollars;
+/*7) What is the difference between a LEFT OUTER JOIN and a RIGHT OUTER JOIN? Give example
+     queries in SQL to demonstrate. (Feel free to use the CAP2 database to make your points here.)
+
+      A left outer join joins all of rows of the left table regardless of whether there is a corresponding
+      row on the right.  A right outer join is similar to a left outer join, except that all the rows s from 
+      the right table are displayed as the result regardless if there are matching rows in the left table.
+
+     
+*/
