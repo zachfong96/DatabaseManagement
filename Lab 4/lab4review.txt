@@ -1,0 +1,30 @@
+9 pts
+
+Correct queries
+Correct SQL statements
+Correct output for some queries
+SQL statements are somewhat readable
+
+
+
+7. Get all customers who have the same discount as that of any customers in
+Dallas or London
+
+Incorrect output
+- It seems like you did not read the correct instructions for this query. Read
+  it again, please.
+- You might be overcomplicating things.
+
+
+In general: 
+
+- Please do not use tabs for indentation. Use spaces instead.
+
+- Test all your SQL statements.
+
+- Make sure you read all the instructions for queries really well.
+
+- Make sure your name is somewhere in the .sql file.
+
+
+- Dr. Rivas
