@@ -50,40 +50,43 @@ values (220, 120);
 select *
 from Prerequisites;
 
-create or replace function PreReqsFor(int) returns refcursor as 
+create or replace function PreReqsFor(int, refcursor) returns refcursor as 
 $$
 declare 
 	vnum 	int:= $1;
-	result 	refcursor:=null;
+	resultset 	refcursor:=$2;
 begin 
-	open result for 
+	open resultset for 
                 select preReqNum 
 		from Prerequisites 
 		where courseNum = vnum;
-	return result;	
-
+	return resultset;	
 end;
 $$
-language plpgsql
+language plpgsql;
 
-Select PreReqsFor(221);
 
-create or replace function IsPreREqFor(int) returns refcurosr as 
+
+Select PreReqsFor(221, 'result');
+fetch all from result;
+
+create or replace function IsPreReqFor(int, refcursor) returns refcursor as 
 $$
 declare
-        num int:=$1
-        result refcursor:=null;
+        num int:=$1;
+        resultset refcursor:=$2;
 begin
-        open result for 
+        open resultset for 
                 select courseNum
                 from Prerequisites
-                where vnum = PreReqNum;
-        return result;
+                where num = PreReqNum;
+        return resultset;
 end;
 $$
 language plpgsql
 
-        
+ Select IsPreReqFor(220, 'results');
+ fetch all from results;
            
 
 
