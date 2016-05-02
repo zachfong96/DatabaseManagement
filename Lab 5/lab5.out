@@ -1,0 +1,27 @@
+<-= 1 =->
+city = Tokyo
+city = Duluth
+<-= 2 =->
+pid = p03
+pid = p05
+pid = p03
+<-= 3 =->
+name = Weyland-Yutani
+<-= 4 =->
+name = Weyland-Yutani
+<-= 5 =->
+name = Tiptop
+name = Otasi
+name = Tiptop
+name = Otasi
+<-= 6 =->
+ERROR:  column a.agents does not exist
+LINE 1:    select c.name, a.agents, c.city from customers c, agents ...
+                          ^
+
+<-= 7 =->
+ERROR:  syntax error at or near "customers"
+LINE 1:  select c.name, c.city form customers c where city in ( sele...
+                                    ^
+
+<-= end =->
